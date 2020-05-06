@@ -4,3 +4,5 @@ import errorReducer from './errorReducer';
 export default combineReducers({
     errors: errorReducer
 });
+
+//this is the combine reducer
