@@ -1,0 +1,33 @@
+
+import {SET_CURRENT_USER } from  '../actions/types';
+
+
+ const initialState ={
+
+     user :{},
+      validateToken : false
+ };
+
+  const booleanValidateToken =(payload) =>{
+      if(payload){
+             return true;
+      } else{
+           return  false;
+      }
+  }
+  export default function( state =initialState, action){
+
+    switch(action.type){
+
+        case SET_CURRENT_USER:
+            return{
+                ...state,
+                validateToken :  booleanValidateToken(action.payload),
+                user : action.payload
+            }
+
+        default:
+             return state;
+
+    }
+  }
